@@ -68,7 +68,7 @@ document.getElementById("setupForm").addEventListener("submit", (e) => {
   // Generate quiz questions for each participant
   participants.forEach((participant) => {
     const availableQuestions = participant.booksRead.flatMap((book) => book.questions);
-    participant.quizQuestions = availableQuestions.sort(() => 0.5 - Math.random()).slice(0, 3); // Limit to 3 questions for testing
+    participant.quizQuestions = availableQuestions.sort(() => 0.5 - Math.random()).slice(0, 20); // Limit to 3 questions for testing
   });
 
   // Initialize active participants and max questions
@@ -83,7 +83,7 @@ document.getElementById("setupForm").addEventListener("submit", (e) => {
 // Function to initialize active participants and max questions
 function initializeQuiz() {
   activeParticipants = participants.filter((participant) => participant.quizQuestions.length > 0);
-  maxQuestions = activeParticipants.length * 3; // 3 questions per active participant for testing
+  maxQuestions = activeParticipants.length * 20; // 3 questions per active participant for testing
 }
 
 // Function to check if the quiz is complete
